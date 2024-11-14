@@ -9,11 +9,27 @@ Detailed article on Medium https://medium.com/@igorkhomenko/building-a-multivend
 
 ## How to run 
 
+1. Run PostgreSQL Only
+
+By default, running the following command will start only the `PostgreSQL` container:
+
 ```
 docker compose up
 ```
+This command will use your default docker-compose.yml file to start the `PostgreSQL` service, but `Medusa` will not be started automatically.
 
+2. Run Both PostgreSQL and Medusa Together
+
+If you want to run both PostgreSQL and Medusa in one command, use the following command that combines both the main `docker-compose.yml` file and the `docker-compose.medusa.yml` file:
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.medusa.yml up --build
 ```
+This command will build and start both PostgreSQL and Medusa containers.
+
+3. Alternative Manual Setup (Without Medusa Docker Compose)
+
+```bash
 cd medusa-marketplace-demo
 yarn
 cp .env.template .env

@@ -15,9 +15,8 @@ services:
     volumes:
       - ${POSTGRES_VOLUME_DATA:-/tmp/marketplace-db}:/var/lib/postgresql/data
     networks:
-      internal:
-        aliases:
-          - ${POSTGRES_HOST:-postgres}
+      - internal
+
 networks:
   internal:
     name: ${PROJECT_NAME:-marketplace}
