@@ -16,7 +16,7 @@ By default, running the following command will start only the `PostgreSQL` conta
 ```
 docker compose up
 ```
-This command will use your default docker-compose.yml file to start the `PostgreSQL` service, but `Medusa` will not be started automatically.
+This command will use your default docker-compose.yml file to start the `PostgreSQL` service, but `Medusa` will not be started automatically. This step is required because we create a network in `PostgreSQL`, and `Medusa` depends on it.
 
 2. Run Both PostgreSQL and Medusa Together
 
@@ -26,6 +26,8 @@ If you want to run both PostgreSQL and Medusa in one command, use the following 
 docker compose -f docker-compose.yml -f docker-compose.medusa.yml up --build
 ```
 This command will build and start both PostgreSQL and Medusa containers.
+
+**Important:** You can only run this command after `PostgreSQL` has already been started using the docker compose up command from step 1. This is because PostgreSQL creates a network that Medusa depends on to run properly.
 
 3. Alternative Manual Setup (Without Medusa Docker Compose)
 
@@ -38,6 +40,22 @@ yarn dev
 ```
 
 The Medusa dashboard should now be running on http://localhost:9000/app
+
+## Removing Resources
+
+If you want to remove the containers, networks, and volumes created by Docker Compose, use the following commands:
+
+Option 1: Using the default `docker-compose.yml` (for PostgreSQL only)
+
+```bash
+docker compose down -v
+```
+
+Option 2: Using the combined `docker-compose.yml` and `docker-compose.medusa.yml`
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.medusa.yml down -v
+```
 
 ## License
 

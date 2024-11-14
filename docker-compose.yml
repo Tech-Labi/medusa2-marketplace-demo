@@ -13,10 +13,14 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ${POSTGRES_VOLUME_DATA:-/tmp/marketplace-db}:/var/lib/postgresql/data
+      - marketplace-db-data:/var/lib/postgresql/data
     networks:
       - internal
 
 networks:
   internal:
     name: ${PROJECT_NAME:-marketplace}
+
+volumes:
+  marketplace-db-data:
+    name: ${POSTGRES_VOLUME_NAME:-marketplace-db-data}
