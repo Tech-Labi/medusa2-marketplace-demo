@@ -18,7 +18,7 @@ docker compose -f docker-compose.yml -f docker-compose.medusa.yml up --build
 ```
 This command will build and start both PostgreSQL and Medusa containers.
 
-**Important:** You can only run this command after `PostgreSQL` has already been started using the docker compose up command from step 1. This is because PostgreSQL creates a network that Medusa depends on to run properly.
+**Important:** You can only run this command after `PostgreSQL` has already been started using the docker compose up command from Option 2 (below). This is because PostgreSQL creates a network that Medusa depends on to run properly.
 
 ### Option 2: run Medusa app manually
 
