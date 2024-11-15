@@ -9,16 +9,7 @@ Detailed article on Medium https://medium.com/@igorkhomenko/building-a-multivend
 
 ## How to run 
 
-1. Run PostgreSQL Only
-
-By default, running the following command will start only the `PostgreSQL` container:
-
-```
-docker compose up
-```
-This command will use your default docker-compose.yml file to start the `PostgreSQL` service, but `Medusa` will not be started automatically. This step is required because we create a network in `PostgreSQL`, and `Medusa` depends on it.
-
-2. Run Both PostgreSQL and Medusa Together
+### Option 1: All in one
 
 If you want to run both PostgreSQL and Medusa in one command, use the following command that combines both the main `docker-compose.yml` file and the `docker-compose.medusa.yml` file:
 
@@ -27,9 +18,22 @@ docker compose -f docker-compose.yml -f docker-compose.medusa.yml up --build
 ```
 This command will build and start both PostgreSQL and Medusa containers.
 
-**Important:** You can only run this command after `PostgreSQL` has already been started using the docker compose up command from step 1. This is because PostgreSQL creates a network that Medusa depends on to run properly.
+**Important:** You can only run this command after `PostgreSQL` has already been started using the docker compose up command from Option 2 (below). This is because PostgreSQL creates a network that Medusa depends on to run properly.
 
-3. Alternative Manual Setup (Without Medusa Docker Compose)
+### Option 2: run Medusa app manually
+
+1. Run PostgreSQL
+
+By default, running the following command will start only the `PostgreSQL` container:
+
+```
+docker compose up
+```
+This command will use your default docker-compose.yml file to start the `PostgreSQL` service, but `Medusa` will not be started automatically. This step is required because we create a network in `PostgreSQL`, and `Medusa` depends on it.
+
+This command will use your default docker-compose.yml file to start the `PostgreSQL` service, but `Medusa` will not be started automatically. This step is required because we create a network in `PostgreSQL`, and `Medusa` depends on it.
+
+2. Run Medusa app manually
 
 ```bash
 cd medusa-marketplace-demo
@@ -41,7 +45,7 @@ yarn dev
 
 The Medusa dashboard should now be running on http://localhost:9000/app
 
-## Removing Resources
+## Cleanup resources
 
 If you want to remove the containers, networks, and volumes created by Docker Compose, use the following commands:
 
