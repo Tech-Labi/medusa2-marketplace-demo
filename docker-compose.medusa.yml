@@ -13,7 +13,7 @@ services:
     ports:
       - 9000:9000
     volumes:
-      - ./medusa-marketplace-demo/.env.docker:/app/.env
+      - ./medusa-marketplace-demo/.env.docker:/application/.env
     command: sh -c "npx medusa db:setup --db marketplace && yarn dev"
     networks:
       - internal
