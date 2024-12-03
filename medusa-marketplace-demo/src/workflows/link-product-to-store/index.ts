@@ -2,7 +2,7 @@ import {
   createWorkflow,
   WorkflowResponse,
 } from "@medusajs/framework/workflows-sdk";
-import { linkProductToStoreStep } from "./steps/link-product-to-store"
+import { linkProductToStoreStep } from "./steps/link-product-to-store";
 import { getStoreStep } from "./steps/get-store";
 
 export type LinkProductToStoreInput = {
@@ -13,8 +13,7 @@ export type LinkProductToStoreInput = {
 export const linkProductToStoreWorkflow = createWorkflow(
   "link-product-to-store",
   (input: LinkProductToStoreInput) => {
-
-    const { store } = getStoreStep(input.userId);
+    const store = getStoreStep(input.userId);
 
     const productStoreLinkArray = linkProductToStoreStep({
       productId: input.productId,

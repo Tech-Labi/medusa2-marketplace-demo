@@ -3,8 +3,6 @@ import { UserDTO } from "@medusajs/framework/types";
 import { linkOrderToStoreWorkflow } from "../link-order-to-store";
 
 createOrdersWorkflow.hooks.orderCreated(async ({ order }, { container }) => {
-  console.log("HOOK orderCreated", order);
-
   const loggedInUser = container.resolve("loggedInUser") as UserDTO;
 
   await linkOrderToStoreWorkflow(container).run({

@@ -16,6 +16,6 @@ export const getStoreStep = createStep(
 
     const store = users[0].store;
 
-    return new StepResponse({ store });
+    return new StepResponse(store);
   }
 );
