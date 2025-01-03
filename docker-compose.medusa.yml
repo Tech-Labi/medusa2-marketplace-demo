@@ -15,6 +15,7 @@ services:
     volumes:
       - ./medusa-marketplace-demo/.env.docker:/application/.env
     command: sh -c "npx medusa db:setup --db marketplace && yarn dev"
+    # command: sh -c "npx medusa db:setup --db marketplace && NODE_ENV=production yarn start" # for running in production mode
     networks:
       - internal
 

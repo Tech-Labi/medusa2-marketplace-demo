@@ -6,6 +6,8 @@ COPY . .
 
 RUN yarn install --frozen-lockfile
 
+RUN yarn build 
+
 EXPOSE 9000
 
 CMD ["yarn", "dev"]
