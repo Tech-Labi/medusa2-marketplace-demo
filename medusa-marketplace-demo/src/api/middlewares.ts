@@ -3,6 +3,7 @@ import { registerLoggedInUser } from "./middlewares/logged-in-user";
 import { addStoreIdToFilterableFields } from "./middlewares/add-store-id-to-filterable-fields";
 import { maybeApplyLinkFilter } from "@medusajs/framework";
 import { moveIdsToQueryFromFilterableFields } from "./middlewares/move-ids-to-query-from-filterable-fields";
+import { checkApiKey } from "./middlewares/check-api-key";
 
 export default defineMiddlewares({
   routes: [
@@ -57,6 +58,11 @@ export default defineMiddlewares({
         addStoreIdToFilterableFields,
         moveIdsToQueryFromFilterableFields,
       ],
+    },
+    {
+      method: ["POST"],
+      matcher: "/create-super-store",
+      middlewares: [checkApiKey],
     },
   ],
 });
