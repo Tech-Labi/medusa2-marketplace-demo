@@ -1,5 +1,6 @@
 import {
   createWorkflow,
+  transform,
   when,
   WorkflowResponse,
 } from "@medusajs/framework/workflows-sdk";
@@ -22,16 +23,21 @@ export const createStoreWorkflow = createWorkflow(
   "create-store",
   (input: CreateStoreInput) => {
     const salesChannel = getSalesChannelStep();
-    
+
+    const storesData = transform({ input, salesChannel }, (data) => [
+      {
+        name: data.input.store_name,
+        supported_currencies: [{ currency_code: "usd", is_default: true }],
+        default_sales_channel_id: data.salesChannel.id,
+        metadata: data.input.is_super_admin
+          ? { is_super_admin: true }
+          : undefined,
+      },
+    ]);
+
     const stores = createStoresWorkflow.runAsStep({
       input: {
-        stores: [
-          {
-            name: input.store_name,
-            supported_currencies: [{ currency_code: "usd", is_default: true }],
-            default_sales_channel_id: salesChannel.id
-          },
-        ],
+        stores: storesData,
       },
     });
 

@@ -1,5 +1,6 @@
 import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework";
 import {
+  CreateOrderDTO,
   IOrderModuleService,
   IPaymentModuleService,
 } from "@medusajs/framework/types";
@@ -101,7 +102,7 @@ export default async function orderPlacedHandler({
           id: undefined,
         })),
         // metadata: {  },
-      });
+      } as CreateOrderDTO);
 
       // copy payment
       const createdPaymentCollection =
