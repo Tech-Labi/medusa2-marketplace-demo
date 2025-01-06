@@ -5,6 +5,7 @@ import {
 } from "@medusajs/framework/http";
 import { ContainerRegistrationKeys } from "@medusajs/framework/utils";
 import { UserDTO } from "@medusajs/framework/types";
+import { SUPER_ADMIN_STORE_NAME } from "src/constants";
 
 export async function addStoreIdToFilterableFields(
   req: MedusaRequest,
@@ -29,12 +30,16 @@ export async function addStoreIdToFilterableFields(
   });
 
   const store = users[0].store;
+
+  if (!req.filterableFields) {
+    req.filterableFields = {};
+  }
   if (store) {
-    if (!req.filterableFields) {
-      req.filterableFields = {};
-    }
     // set 'filterableFields' so then the 'maybeApplyLinkFilter' middleware will process it
     req.filterableFields["store_id"] = store.id;
+    // super admin?
+  } else if (req.url.includes("/admin/stores") && req.method === "GET") {
+    req.filterableFields["store_name"] = SUPER_ADMIN_STORE_NAME;
   }
 
   return next();
