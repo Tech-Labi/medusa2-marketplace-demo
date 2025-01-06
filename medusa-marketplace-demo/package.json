@@ -13,6 +13,7 @@
     "medusa"
   ],
   "scripts": {
+    "postinstall": "sh patch-admin.sh",
     "build": "medusa build",
     "seed": "medusa exec ./src/scripts/seed.ts",
     "start": "medusa start",

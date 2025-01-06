@@ -4,6 +4,7 @@ import { addStoreIdToFilterableFields } from "./middlewares/add-store-id-to-filt
 import { maybeApplyLinkFilter } from "@medusajs/framework";
 import { moveIdsToQueryFromFilterableFields } from "./middlewares/move-ids-to-query-from-filterable-fields";
 import { checkApiKey } from "./middlewares/check-api-key";
+import { onlyForSuperAdmins } from "./middlewares/only-for-super-admin";
 
 export default defineMiddlewares({
   routes: [
@@ -63,6 +64,16 @@ export default defineMiddlewares({
       method: ["POST"],
       matcher: "/create-super-store",
       middlewares: [checkApiKey],
+    },
+    {
+      method: ["POST"],
+      matcher: "/admin/impersonate",
+      middlewares: [onlyForSuperAdmins],
+    },
+    {
+      method: ["POST"],
+      matcher: "/admin/impersonate-reset",
+      middlewares: [onlyForSuperAdmins],
     },
   ],
 });
