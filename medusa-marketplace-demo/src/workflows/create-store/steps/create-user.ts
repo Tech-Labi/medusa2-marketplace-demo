@@ -14,7 +14,10 @@ export const createUserStep = createStep(
     const authService: IAuthModuleService = container.resolve(Modules.AUTH);
 
     // 1. create user
-    const user = await userService.createUsers(input);
+    const user = await userService.createUsers({
+      ...input,
+      metadata: input.is_super_admin ? { is_super_admin: true } : undefined,
+    });
 
     // 2. create auth identity
     const registerResponse = await authService.register("emailpass", {
@@ -32,7 +35,7 @@ export const createUserStep = createStep(
       },
     });
 
-    // 4. do we want to authenticate immediately? 
+    // 4. do we want to authenticate immediately?
     //
     // const authenticationResponse = await authService.authenticate("emailpass", {
     //   body: {
@@ -41,10 +44,7 @@ export const createUserStep = createStep(
     //   },
     // } as AuthenticationInput);
 
-    return new StepResponse(
-      { user, registerResponse },
-      user.id
-    );
+    return new StepResponse({ user, registerResponse }, user.id);
   },
   async (id: string, { container }) => {
     const userModuleService: IUserModuleService = container.resolve(
