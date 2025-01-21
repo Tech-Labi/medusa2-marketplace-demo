@@ -13,7 +13,7 @@
     "medusa"
   ],
   "scripts": {
-    "postinstall": "sh patch-admin.sh",
+    "postinstall": "node -e \"require('shelljs').exec('sh patch-admin.sh')\"",
     "build": "medusa build",
     "seed": "medusa exec ./src/scripts/seed.ts",
     "start": "medusa start",
@@ -47,6 +47,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "shelljs": "^0.8.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2",
     "vite": "^5.2.11"
