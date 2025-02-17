@@ -60,7 +60,7 @@ const readFileAsLines = (filePath) => {
   return lines;
 };
 
-const removeOccurrence = (lines, value) => {
+const removeOccurrence = (lines, value, skipFirst = true) => {
   const updatedLines = lines.reduce(
     (acc, line) => {
       if (line.includes(value)) {
@@ -75,7 +75,7 @@ const removeOccurrence = (lines, value) => {
       }
       return acc;
     },
-    { result: [], foundFirst: false }
+    { result: [], foundFirst: !skipFirst }
   ).result;
 
   return updatedLines;
