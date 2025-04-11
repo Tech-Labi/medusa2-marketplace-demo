@@ -1914,7 +1914,7 @@
   resolved "https://registry.yarnpkg.com/@medusajs/fulfillment/-/fulfillment-2.6.1.tgz#55d76627d58f780e2311fb1ef65c16b6496cc57a"
   integrity sha512-mEpqkFOxwvW8AFVwhvRkEd8l7CchljXhIcoiIbRiG8TN6HiNNnVPwIkfuHMwwtZ+4ql9Qb6Ou1kEFwCHuL32iQ==
 
-"@medusajs/icons@2.6.1":
+"@medusajs/icons@2.6.1", "@medusajs/icons@^2.6.1":
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/@medusajs/icons/-/icons-2.6.1.tgz#d38534baea1926d2cb7bd971af1dfe24492f1b15"
   integrity sha512-OH27novpZDQtJhgVIXmWe7ZwzuviKB+vY+R2WJ6WFE0mhSVKtepLq40wMNFdPFEoalc21vWnADAghMa0n1e17Q==
@@ -1929,7 +1929,7 @@
   resolved "https://registry.yarnpkg.com/@medusajs/inventory/-/inventory-2.6.1.tgz#a3d38d7aa949635677e803e384b673b2a8d85416"
   integrity sha512-Dwfaigo/OmWVP0WrzUt0b0oLpTLQ9HFl6CBdGcYB4tqXjBU+I36EdbG1m+hkrWldyHXzlsqUJq/sluMOlj8X0g==
 
-"@medusajs/js-sdk@2.6.1":
+"@medusajs/js-sdk@2.6.1", "@medusajs/js-sdk@^2.6.1":
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/@medusajs/js-sdk/-/js-sdk-2.6.1.tgz#2871a1d887cae49be9bb68c29ddcc5ee74b74ced"
   integrity sha512-X7gTuWSIEocBefs5Sqti+bax2zlXpsYDvFFZjKLAwLgxQdb4QJT3j8HXgRVkWo9Lcmjs1sL/wenmnYUgDxGtdQ==
@@ -2144,7 +2144,7 @@
     get-port "^5.1.0"
     randomatic "^3.1.1"
 
-"@medusajs/types@2.6.1":
+"@medusajs/types@2.6.1", "@medusajs/types@^2.6.1":
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/@medusajs/types/-/types-2.6.1.tgz#acb7caf9f6a3d81c7b30dd144214894a876a9e63"
   integrity sha512-cysEyeh/h1D3mkYSeaoo6fjpfCqHUGTaIoPLUxU3e2oyJ5GhwdpKB4N3mdkUFBSWmuWn5x7eLAwb7DqM4UzX+w==
@@ -4397,6 +4397,11 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.34.8.tgz#5783fc0adcab7dc069692056e8ca8d83709855ce"
   integrity sha512-8y7ED8gjxITUltTUEJLQdgpbPh1sUQ0kMTmufRF/Ns5tI9TNMNlhWtmPKKHCU0SilX+3MJkZ0zERYYGIVBYHIA==
 
+"@rollup/rollup-linux-x64-gnu@4.39.0":
+  version "4.39.0"
+  resolved "https://registry.yarnpkg.com/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.39.0.tgz#00825b3458094d5c27cb4ed66e88bfe9f1e65f90"
+  integrity sha512-t9jqYw27R6Lx0XKfEFe5vUeEJ5pF3SGIM6gTfONSMb7DuG6z6wfj2yjcoZxHg129veTqU7+wOhY6GX8wmf90dA==
+
 "@rollup/rollup-linux-x64-musl@4.34.8":
   version "4.34.8"
   resolved "https://registry.yarnpkg.com/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.34.8.tgz#00b6c29b298197a384e3c659910b47943003a678"
@@ -5114,10 +5119,16 @@
   resolved "https://registry.yarnpkg.com/@tanstack/virtual-core/-/virtual-core-3.13.0.tgz#8db0ccc9d6c32b6393551a6d19c87dbb259a8828"
   integrity sha512-NBKJP3OIdmZY3COJdWkSonr50FMVIi+aj5ZJ7hI/DTpEKg2RMfo/KvP8A3B/zOSpMgIe52B5E2yn7rryULzA6g==
 
-"@techlabi/medusa-marketplace-plugin@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@techlabi/medusa-marketplace-plugin/-/medusa-marketplace-plugin-0.11.0.tgz#fa05a185eab7560fed8eb59ed1999f046c124f1b"
-  integrity sha512-vavYEJrOONb4DO6IgII5pyRJU+jiQ14tkzltwWgAwrP44LQkg9/W99CPiOwmB6DGqjrLEdM/NHKRFPfQDYjN8w==
+"@techlabi/medusa-marketplace-plugin@0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@techlabi/medusa-marketplace-plugin/-/medusa-marketplace-plugin-0.15.0.tgz#2dda906bae29c66fb2aa5a39ee2aeab704d48f67"
+  integrity sha512-S5hG9TxxSwzXrlWzZ1ePd0+iftLt3NyG8W9MWgumfvm0oHUhxRgBqP2yrcagyn+gKYnURVqvX5901h/rBzK4DQ==
+  dependencies:
+    "@medusajs/icons" "^2.6.1"
+    "@medusajs/js-sdk" "^2.6.1"
+    "@medusajs/types" "^2.6.1"
+  optionalDependencies:
+    "@rollup/rollup-linux-x64-gnu" "4.39.0"
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.11"

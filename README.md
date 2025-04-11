@@ -41,6 +41,7 @@ cd medusa-marketplace-demo
 yarn
 cp .env.template .env
 npx medusa db:setup --db marketplace
+npx medusa db:migrate
 yarn dev
 ```
 
