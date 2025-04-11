@@ -4,12 +4,15 @@ A workflow is a series of queries and actions that complete a task.
 
 The workflow is created in a TypeScript or JavaScript file under the `src/workflows` directory.
 
+> Learn more about workflows in [this documentation](https://docs.medusajs.com/learn/fundamentals/workflows).
+
 For example:
 
 ```ts
-import { 
+import {
   createStep,
   createWorkflow,
+  WorkflowResponse,
   StepResponse,
 } from "@medusajs/framework/workflows-sdk"
 
@@ -29,23 +32,24 @@ const step2 = createStep(
 )
 
 type WorkflowOutput = {
-  message: string
+  message1: string
+  message2: string
 }
 
-const myWorkflow = createWorkflow<
-  WorkflowInput,
-  WorkflowOutput
->("hello-world", function (input) {
-  const str1 = step1()
-  // to pass input
-  step2(input)
-
-  return {
-    message: str1,
+const helloWorldWorkflow = createWorkflow(
+  "hello-world",
+  (input: WorkflowInput) => {
+    const greeting1 = step1()
+    const greeting2 = step2(input)
+    
+    return new WorkflowResponse({
+      message1: greeting1,
+      message2: greeting2
+    })
   }
-})
+)
 
-export default myWorkflow
+export default helloWorldWorkflow
 ```
 
 ## Execute Workflow

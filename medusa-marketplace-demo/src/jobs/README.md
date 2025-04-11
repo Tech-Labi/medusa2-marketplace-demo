@@ -2,19 +2,19 @@
 
 A scheduled job is a function executed at a specified interval of time in the background of your Medusa application.
 
+> Learn more about scheduled jobs in [this documentation](https://docs.medusajs.com/learn/fundamentals/scheduled-jobs).
+
 A scheduled job is created in a TypeScript or JavaScript file under the `src/jobs` directory.
 
 For example, create the file `src/jobs/hello-world.ts` with the following content:
 
 ```ts
 import {
-  IProductModuleService,
   MedusaContainer
 } from "@medusajs/framework/types";
-import { Modules } from "@medusajs/framework/utils";
 
 export default async function myCustomJob(container: MedusaContainer) {
-  const productService: IProductModuleService = container.resolve(Modules.PRODUCT)
+  const productService = container.resolve("product")
 
   const products = await productService.listAndCountProducts();
 
