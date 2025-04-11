@@ -2,6 +2,7 @@
 
 This is a demo project which demoes how to create a multivendor marketplace demo using [Medusa 2.0](https://medusajs.com/)
 
+> [!NOTE]
 **UPD**: all the multivendor marketplace  related code was moved to [medusa-marketplace-plugin](https://github.com/Tech-Labi/medusa-marketplace-plugin), so the demo app now uses this plugin (read Part 4 below).
 
 A four-part series articles on Medium:
