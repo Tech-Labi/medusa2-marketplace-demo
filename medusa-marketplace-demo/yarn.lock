@@ -5193,10 +5193,10 @@
   resolved "https://registry.yarnpkg.com/@tanstack/virtual-core/-/virtual-core-3.13.0.tgz#8db0ccc9d6c32b6393551a6d19c87dbb259a8828"
   integrity sha512-NBKJP3OIdmZY3COJdWkSonr50FMVIi+aj5ZJ7hI/DTpEKg2RMfo/KvP8A3B/zOSpMgIe52B5E2yn7rryULzA6g==
 
-"@techlabi/medusa-marketplace-plugin@0.34.0":
-  version "0.34.0"
-  resolved "https://registry.yarnpkg.com/@techlabi/medusa-marketplace-plugin/-/medusa-marketplace-plugin-0.34.0.tgz#a08102b1a34bc310bd5217bb49c0571fadb8ba24"
-  integrity sha512-IgnD2EJ1LiWK6dtvgGb1htl7TMf4MD6Bv3TVDltIOnYJeJTZcDMbISq1pxz+QLL6vzY7cXJiCpW0U06NMCl+Zw==
+"@techlabi/medusa-marketplace-plugin@0.35.0":
+  version "0.35.0"
+  resolved "https://registry.yarnpkg.com/@techlabi/medusa-marketplace-plugin/-/medusa-marketplace-plugin-0.35.0.tgz#596e57d5e5f71bb97233982e15a2f957650aa44e"
+  integrity sha512-fgmDPsaQ8l2983sxDvKwpy2bL9+MfuxzsBZWBrVbvcv//3CeJcc2F5wYvhSC5g3jC21rQJTbMnYzVM4By+3Uug==
   dependencies:
     "@medusajs/icons" "^2.9.0"
     "@medusajs/js-sdk" "^2.9.0"
