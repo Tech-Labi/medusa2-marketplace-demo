@@ -1,6 +1,6 @@
 {
   "name": "medusa-starter-default",
-  "version": "0.0.1",
+  "version": "0.10.0",
   "description": "A starter for Medusa projects.",
   "author": "Medusa (https://medusajs.com)",
   "license": "MIT",
@@ -23,20 +23,20 @@
     "test:unit": "TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit"
   },
   "dependencies": {
-    "@medusajs/admin-sdk": "2.6.1",
-    "@medusajs/cli": "2.6.1",
-    "@medusajs/framework": "2.6.1",
-    "@medusajs/medusa": "2.6.1",
+    "@medusajs/admin-sdk": "2.10.3",
+    "@medusajs/cli": "2.10.3",
+    "@medusajs/framework": "2.10.3",
+    "@medusajs/medusa": "2.10.3",
     "@mikro-orm/core": "6.4.3",
     "@mikro-orm/knex": "6.4.3",
     "@mikro-orm/migrations": "6.4.3",
     "@mikro-orm/postgresql": "6.4.3",
-    "@techlabi/medusa-marketplace-plugin": "0.15.0",
+    "@techlabi/medusa-marketplace-plugin": "0.35.0",
     "awilix": "^8.0.1",
     "pg": "^8.13.0"
   },
   "devDependencies": {
-    "@medusajs/test-utils": "2.6.1",
+    "@medusajs/test-utils": "2.10.3",
     "@mikro-orm/cli": "6.4.3",
     "@swc/core": "1.5.7",
     "@swc/jest": "^0.2.36",

@@ -2,7 +2,7 @@ version: '3'
 services:
   postgres:
     image: postgres:${POSTGRES_VERSION:-15.3-alpine}
-    container_name: ${PROJECT_NAME:-marketplace-db}-postgres
+    container_name: ${PROJECT_NAME:-marketplace-db-app}-postgres
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-marketplace}
       POSTGRES_USER: ${POSTGRES_USER:-marketplace}
